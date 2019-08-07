@@ -13,7 +13,7 @@
         <!--Gigs-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gigs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GigsViewController" customModule="Gigs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +47,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="p4T-Hk-LLC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YuM-DF-p5j"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,17 +66,18 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Bh-Lf-8n6"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UnY-ji-UYl" kind="presentation" identifier="loginSegue" id="ahE-YW-Mcz"/>
+                        <outlet property="tableView" destination="sPE-pF-OS5" id="g1h-8w-zB5"/>
+                        <segue destination="UnY-ji-UYl" kind="presentation" identifier="SignInSegue" id="ahE-YW-Mcz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="9RF-eM-liF">
             <objects>
-                <viewController id="UnY-ji-UYl" sceneMemberID="viewController">
+                <viewController id="UnY-ji-UYl" customClass="SignInViewController" customModule="Gigs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xR1-63-p9a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +88,9 @@
                                     <segment title="Sign Up"/>
                                     <segment title="Sign In"/>
                                 </segments>
+                                <connections>
+                                    <action selector="signInSegmentedControlDidChangeValue:" destination="UnY-ji-UYl" eventType="valueChanged" id="c9v-9M-P5r"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-oR-iGm">
                                 <rect key="frame" x="20" y="132" width="374" height="80"/>
@@ -104,6 +112,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yw-Xn-Ffn">
                                 <rect key="frame" x="107" y="232" width="200" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="signInButtonTapped:" destination="UnY-ji-UYl" eventType="touchUpInside" id="hH0-zl-hz1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,6 +131,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OBD-tK-EVe"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordLabel" destination="14T-br-cRQ" id="pBo-MA-Qyx"/>
+                        <outlet property="signInButton" destination="3yw-Xn-Ffn" id="ouh-9q-be7"/>
+                        <outlet property="signInSegmentedControl" destination="1P7-ii-LMG" id="fCq-yQ-Qdq"/>
+                        <outlet property="usernameLabel" destination="NOw-jv-CQk" id="iQW-4t-s0e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddb-9U-AZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

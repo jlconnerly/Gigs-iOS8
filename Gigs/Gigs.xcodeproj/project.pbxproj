@@ -12,7 +12,10 @@
 		32BCF57B22FB618300E760D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BCF57A22FB618300E760D9 /* Assets.xcassets */; };
 		32BCF57E22FB618300E760D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BCF57C22FB618300E760D9 /* LaunchScreen.storyboard */; };
 		32BCF58822FB65A100E760D9 /* GigsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58722FB65A100E760D9 /* GigsViewController.swift */; };
-		32BCF58A22FB65C100E760D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58922FB65C100E760D9 /* LoginViewController.swift */; };
+		32BCF58A22FB65C100E760D9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58922FB65C100E760D9 /* SignInViewController.swift */; };
+		32BCF58D22FB662C00E760D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58C22FB662C00E760D9 /* User.swift */; };
+		32BCF59022FB673B00E760D9 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58F22FB673B00E760D9 /* Bearer.swift */; };
+		32BCF59222FB678300E760D9 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF59122FB678300E760D9 /* AuthenticationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +26,10 @@
 		32BCF57D22FB618300E760D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32BCF57F22FB618300E760D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32BCF58722FB65A100E760D9 /* GigsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigsViewController.swift; sourceTree = "<group>"; };
-		32BCF58922FB65C100E760D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		32BCF58922FB65C100E760D9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		32BCF58C22FB662C00E760D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		32BCF58F22FB673B00E760D9 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		32BCF59122FB678300E760D9 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,10 @@
 		32BCF57222FB618100E760D9 /* Gigs */ = {
 			isa = PBXGroup;
 			children = (
+				32BCF58E22FB672C00E760D9 /* Models */,
 				32BCF58522FB656900E760D9 /* Views */,
 				32BCF58B22FB65C800E760D9 /* View Controllers */,
+				32BCF59322FB678700E760D9 /* Controllers */,
 				32BCF58622FB658400E760D9 /* Resources */,
 			);
 			path = Gigs;
@@ -86,9 +94,26 @@
 			isa = PBXGroup;
 			children = (
 				32BCF58722FB65A100E760D9 /* GigsViewController.swift */,
-				32BCF58922FB65C100E760D9 /* LoginViewController.swift */,
+				32BCF58922FB65C100E760D9 /* SignInViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		32BCF58E22FB672C00E760D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF58C22FB662C00E760D9 /* User.swift */,
+				32BCF58F22FB673B00E760D9 /* Bearer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32BCF59322FB678700E760D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF59122FB678300E760D9 /* AuthenticationController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32BCF58A22FB65C100E760D9 /* LoginViewController.swift in Sources */,
+				32BCF59022FB673B00E760D9 /* Bearer.swift in Sources */,
+				32BCF58D22FB662C00E760D9 /* User.swift in Sources */,
+				32BCF58A22FB65C100E760D9 /* SignInViewController.swift in Sources */,
 				32BCF58822FB65A100E760D9 /* GigsViewController.swift in Sources */,
 				32BCF57422FB618100E760D9 /* AppDelegate.swift in Sources */,
+				32BCF59222FB678300E760D9 /* AuthenticationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
