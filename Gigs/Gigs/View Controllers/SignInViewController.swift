@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SigninViewController.swift
 //  Gigs
 //
 //  Created by Jake Connerly on 8/7/19.
@@ -8,15 +8,24 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
 
+    @IBOutlet weak var signInSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var usernameLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func loginSegmentedControlDidChangeValue(_ sender: UISegmentedControl) {
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
