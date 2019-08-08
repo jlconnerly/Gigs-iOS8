@@ -16,6 +16,8 @@
 		32BCF58D22FB662C00E760D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58C22FB662C00E760D9 /* User.swift */; };
 		32BCF59022FB673B00E760D9 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF58F22FB673B00E760D9 /* Bearer.swift */; };
 		32BCF59222FB678300E760D9 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF59122FB678300E760D9 /* AuthenticationController.swift */; };
+		32BCF5C422FCAF6100E760D9 /* GigDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF5C322FCAF6100E760D9 /* GigDetailViewController.swift */; };
+		32BCF5C622FCAFFE00E760D9 /* Gig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF5C522FCAFFE00E760D9 /* Gig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		32BCF58C22FB662C00E760D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32BCF58F22FB673B00E760D9 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		32BCF59122FB678300E760D9 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		32BCF5C322FCAF6100E760D9 /* GigDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigDetailViewController.swift; sourceTree = "<group>"; };
+		32BCF5C522FCAFFE00E760D9 /* Gig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			children = (
 				32BCF58722FB65A100E760D9 /* GigsViewController.swift */,
 				32BCF58922FB65C100E760D9 /* SignInViewController.swift */,
+				32BCF5C322FCAF6100E760D9 /* GigDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			children = (
 				32BCF58C22FB662C00E760D9 /* User.swift */,
 				32BCF58F22FB673B00E760D9 /* Bearer.swift */,
+				32BCF5C522FCAFFE00E760D9 /* Gig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +196,8 @@
 				32BCF59022FB673B00E760D9 /* Bearer.swift in Sources */,
 				32BCF58D22FB662C00E760D9 /* User.swift in Sources */,
 				32BCF58A22FB65C100E760D9 /* SignInViewController.swift in Sources */,
+				32BCF5C622FCAFFE00E760D9 /* Gig.swift in Sources */,
+				32BCF5C422FCAF6100E760D9 /* GigDetailViewController.swift in Sources */,
 				32BCF58822FB65A100E760D9 /* GigsViewController.swift in Sources */,
 				32BCF57422FB618100E760D9 /* AppDelegate.swift in Sources */,
 				32BCF59222FB678300E760D9 /* AuthenticationController.swift in Sources */,
