@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GigController {
+class GigController2 {
     
     //
     //MARK: - Enums
@@ -85,7 +85,7 @@ class GigController {
     //MARK: - Create Gig Method
     //
     
-    func createGig(with gig: Gig, completion: @escaping (Error?) -> Void ) {
+    func createGig(with title: String, dueDate: Date, description: String, completion: @escaping (Error?) -> Void ) {
         guard let bearer = bearer else {
             NSLog("Error with bearer token")
             return
@@ -95,6 +95,8 @@ class GigController {
         var request = URLRequest(url: createGigURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        let gig = Gig(title: title, dueDate: dueDate, description: description)
         
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
@@ -118,9 +120,19 @@ class GigController {
                 completion(error)
                 return
             }
+            
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let gig = try decoder.decode(Gig.self, from: data)
+                    self.gigs.append(gig)
+                }catch{
+                    NSLog("Error decoding Data:\(error)")
+                }
+            }
             completion(nil)
-            }.resume()
-        
+        }.resume()
     }
     
 }

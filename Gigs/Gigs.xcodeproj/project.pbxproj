@@ -18,7 +18,6 @@
 		32BCF59222FB678300E760D9 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF59122FB678300E760D9 /* AuthenticationController.swift */; };
 		32BCF5C422FCAF6100E760D9 /* GigDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF5C322FCAF6100E760D9 /* GigDetailViewController.swift */; };
 		32BCF5C622FCAFFE00E760D9 /* Gig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF5C522FCAFFE00E760D9 /* Gig.swift */; };
-		32BCF5C822FCB07000E760D9 /* GigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF5C722FCB07000E760D9 /* GigController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		32BCF59122FB678300E760D9 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		32BCF5C322FCAF6100E760D9 /* GigDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigDetailViewController.swift; sourceTree = "<group>"; };
 		32BCF5C522FCAFFE00E760D9 /* Gig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gig.swift; sourceTree = "<group>"; };
-		32BCF5C722FCB07000E760D9 /* GigController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				32BCF59122FB678300E760D9 /* AuthenticationController.swift */,
-				32BCF5C722FCB07000E760D9 /* GigController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,7 +195,6 @@
 			files = (
 				32BCF59022FB673B00E760D9 /* Bearer.swift in Sources */,
 				32BCF58D22FB662C00E760D9 /* User.swift in Sources */,
-				32BCF5C822FCB07000E760D9 /* GigController.swift in Sources */,
 				32BCF58A22FB65C100E760D9 /* SignInViewController.swift in Sources */,
 				32BCF5C622FCAFFE00E760D9 /* Gig.swift in Sources */,
 				32BCF5C422FCAF6100E760D9 /* GigDetailViewController.swift in Sources */,

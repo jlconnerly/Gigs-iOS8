@@ -16,8 +16,9 @@ class GigsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let authController = AuthenticationController()
     let gigController = GigController()
+    
+    let dateFormatter = DateFormatter()
     
     //
     //MARK: - View LifeCycle
@@ -32,10 +33,14 @@ class GigsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if authController.bearer == nil {
+        if gigController.bearer == nil {
             performSegue(withIdentifier: "SignInSegue", sender: self)
         }else {
-            //fetch gigs
+            gigController.fetchAllGigs { (result) in
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     
@@ -48,8 +53,19 @@ class GigsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignInSegue" {
             guard let signUpVC = segue.destination as? SignInViewController else { return }
-            signUpVC.authController = authController
             signUpVC.gigController = gigController
+        }
+        
+        if segue.identifier == "AddGigSegue" {
+            guard let addGigVC = segue.destination as? GigDetailViewController else { return }
+            addGigVC.gigController = gigController
+        }
+        
+        if segue.identifier == "ShowGigSegue" {
+            guard let showGigVC = segue.destination as? GigDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            showGigVC.gigController = gigController
+            showGigVC.gig = gigController.gigs[indexPath.row]
         }
     }
     
@@ -59,12 +75,18 @@ class GigsViewController: UIViewController {
 extension GigsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return gigController.gigs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GigCell", for: indexPath)
+        let gig = gigController.gigs[indexPath.row]
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
         
+        cell.textLabel?.text = gig.title
+        
+        cell.detailTextLabel?.text = dateFormatter.string(from: gig.dueDate)
         return cell
     }
 }

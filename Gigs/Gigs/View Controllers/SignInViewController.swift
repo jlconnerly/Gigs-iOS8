@@ -19,8 +19,8 @@ class SignInViewController: UIViewController {
     // MARK: - IBOutlets & Properties
     //
     
-    var authController: AuthenticationController?
     var gigController: GigController?
+    
     var signInType: SignInType = .signUp
 
     @IBOutlet weak var signInSegmentedControl: UISegmentedControl!
@@ -57,7 +57,7 @@ class SignInViewController: UIViewController {
         // MARK: - Sign Up Type
         
         if signInType == .signUp {
-            authController?.signUp(username: username, password: password, completion: { (error) in
+            gigController?.signUp(username: username, password: password, completion: { (error) in
                 guard error == nil else { return }
                 
                 DispatchQueue.main.async {
@@ -77,33 +77,13 @@ class SignInViewController: UIViewController {
             
         }else {
             
-            authController?.signIn(with: username, password: password, completion: { (error) in
+            gigController?.signIn(with: username, password: password, completion: { (error) in
                 guard error == nil else { return }
                 
                 DispatchQueue.main.async {
-                    self.setGigController()
                     self.dismiss(animated: true, completion: nil)
                 }
             })
         }
     }
-    
-    func setGigController() {
-        guard let gigContoller = gigController,
-            let apiController = authController else { return }
-        gigContoller.bearer = apiController.bearer
-    }
-    
-    
-    //
-    // MARK: - Navigation
-    //
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    
-
 }
