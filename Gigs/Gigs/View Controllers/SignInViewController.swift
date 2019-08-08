@@ -20,12 +20,18 @@ class SignInViewController: UIViewController {
     //
     
     var authController: AuthenticationController?
+    var gigController: GigController?
     var signInType: SignInType = .signUp
 
     @IBOutlet weak var signInSegmentedControl: UISegmentedControl!
     @IBOutlet weak var usernameLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+    }
     
     //
     // MARK: - IBActions & Methods
@@ -55,6 +61,7 @@ class SignInViewController: UIViewController {
                 guard error == nil else { return }
                 
                 DispatchQueue.main.async {
+                    
                     let alert = UIAlertController(title: "Sign Up Successful", message: "Now please sign in", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
                         self.signInType = .signIn
@@ -74,10 +81,17 @@ class SignInViewController: UIViewController {
                 guard error == nil else { return }
                 
                 DispatchQueue.main.async {
+                    self.setGigController()
                     self.dismiss(animated: true, completion: nil)
                 }
             })
         }
+    }
+    
+    func setGigController() {
+        guard let gigContoller = gigController,
+            let apiController = authController else { return }
+        gigContoller.bearer = apiController.bearer
     }
     
     

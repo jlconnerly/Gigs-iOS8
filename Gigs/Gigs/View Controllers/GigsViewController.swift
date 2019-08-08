@@ -17,6 +17,7 @@ class GigsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let authController = AuthenticationController()
+    let gigController = GigController()
     
     //
     //MARK: - View LifeCycle
@@ -48,6 +49,7 @@ class GigsViewController: UIViewController {
         if segue.identifier == "SignInSegue" {
             guard let signUpVC = segue.destination as? SignInViewController else { return }
             signUpVC.authController = authController
+            signUpVC.gigController = gigController
         }
     }
     
